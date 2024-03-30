@@ -7,6 +7,14 @@
 </head>
 <body>
     <h1>Create a Product</h1>
+    <div>
+        @id($errors->any())
+        <ul>
+            @foreach($errors->all() as $error)
+
+            @endforeach  
+        </ul>
+    </div>
     <form method="post" action="{{route('products.store')}}">
         @csrf
         @method('post')
